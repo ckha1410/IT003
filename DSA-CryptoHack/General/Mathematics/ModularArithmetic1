@@ -1,0 +1,12 @@
+# def find_b(a, m):
+#     b = a % m 
+#     return b
+# a, m = map(int, input("Enter a and m: ").split())
+# result = find_b(a, m)
+# print(result)
+def find_b_Fermat(a, m):
+    b = pow(a, m-1, m) #base**exponent % modulus
+    return b
+a, m = map(int, input("Enter a and m: ").split())
+result = find_b_Fermat(a, m)
+print(result)
