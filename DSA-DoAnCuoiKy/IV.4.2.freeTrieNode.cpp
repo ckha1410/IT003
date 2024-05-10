@@ -1,9 +1,11 @@
-TrieNode* makeTrieNode(char data)
+void freeTrieNode(TrieNode* root)
 {
-    TrieNode* newNode = new TrieNode();
+    //free the trie node sequence
     for (int i = 0; i < ALPHABET_SIZE; i++)
-        newNode->children[i] = NULL;
-    newNode->is_leaf = 0;
-    newNode->data = data;
-    return newNode;
+    {
+        if (root->children[i] != NULL)
+            freeTrieNode(root->children[i]);
+        else continue;
+    }
+    free(root);
 }
