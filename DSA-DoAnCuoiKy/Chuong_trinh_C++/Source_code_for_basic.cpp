@@ -4,6 +4,7 @@
 using namespace std;
 #define ALPHABET_SIZE 26
 
+//define a trie node structure
 struct TrieNode
 {
     char data; //storing for printing purposes only
