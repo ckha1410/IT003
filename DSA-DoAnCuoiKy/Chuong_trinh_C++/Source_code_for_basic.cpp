@@ -99,6 +99,15 @@ bool isPrefixExist(TrieNode* root, char* word)
     return true;
 }
 
+void print_prefix(TrieNode* root, char* prefix)
+{
+    if (isPrefixExist(root, prefix))
+    //check if the prefix is found in the Trie
+        cout << prefix << " is present in the Trie\n";
+    else
+        cout << prefix << " is not present in the Trie\n";
+}
+
 bool search_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -230,7 +239,7 @@ int main()
     //print the trie after insert
     cout << "Trie after insert: ";
     printTrie(root);
-    cout << "\n";
+    cout << "\n\n";
 
     //store the strings that we want to search in the trie
     vector<char*>searchQuery = {"ant", "hello", "bag", "cat",
@@ -242,12 +251,22 @@ int main()
         print_search(root, searchQuery[i]);
     cout << "\n";
 
+    //store the strings that we want to search prefix in the trie
+    vector<char*>prefixQuery = {"an", "ba", "br", "ge",
+                                "go", "se"};
+    int len3 = prefixQuery.size();  //number of search operations in the trie
+    //searching prefix
+    cout << "Searching prefix:\n";
+    for (int i = 0; i < len3; i++)
+        print_prefix(root, prefixQuery[i]);
+    cout << "\n";
+
     //store the strings that we want to delete in the trie
     vector<char*>deleteQuery = {"sea", "and", "cat", "hi"};
-    int len3 = deleteQuery.size();  //number of delete operations in the trie
+    int len4 = deleteQuery.size();  //number of delete operations in the trie
     //deleting
     cout << "Deleting:\n";
-    for (int i = 0; i < len3; i++)
+    for (int i = 0; i < len4; i++)
         print_delete(root, deleteQuery[i]);
     //print the trie after delete
     cout << "Trie after delete: ";
