@@ -1,3 +1,4 @@
+//function to free trie node
 void freeTrieNode(TrieNode* root)
 {
     //free the trie node sequence
