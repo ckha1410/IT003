@@ -4,13 +4,16 @@
 using namespace std;
 #define ALPHABET_SIZE 26
 
+//define a trie node structure
 struct TrieNode
 {
     char data; //storing for printing purposes only
     TrieNode* children[ALPHABET_SIZE];  //pointer array for child nodes of each node
     bool is_leaf; //a flag to check if it's a leaf node
+                  //that means it is the last character of a word in trie
 };
 
+//function to make a new trie node
 TrieNode* makeTrieNode(char data)
 {
     //create a trie node
@@ -23,6 +26,7 @@ TrieNode* makeTrieNode(char data)
     return newNode;
 }
 
+//function to free trie node
 void freeTrieNode(TrieNode* root)
 {
     //free the trie node sequence
@@ -35,6 +39,7 @@ void freeTrieNode(TrieNode* root)
     free(root);
 }
 
+//function to insert a new word into the trie
 TrieNode* insert_word(TrieNode* root, char* word)
 {
     //initialize the currentNode pointer with the root node
@@ -63,6 +68,7 @@ TrieNode* insert_word(TrieNode* root, char* word)
     return root;
 }
 
+//function to print the trie
 void printTrie(TrieNode* root)
 {
     //print the nodes of the trie
@@ -76,6 +82,7 @@ void printTrie(TrieNode* root)
         printTrie(current->children[i]);
 }
 
+//function to check if a prefix exists or not in trie
 bool isPrefixExist(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -98,6 +105,17 @@ bool isPrefixExist(TrieNode* root, char* word)
     return true;
 }
 
+//function to print the result after checking prefix existence in trie
+void print_prefix(TrieNode* root, char* prefix)
+{
+    if (isPrefixExist(root, prefix))
+    //check if the prefix is found in the Trie
+        cout << prefix << " is present in the Trie!\n";
+    else
+        cout << prefix << " is not present in the Trie!\n";
+}
+
+//function to search a word in the trie
 bool search_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -122,15 +140,17 @@ bool search_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after searching
 void print_search(TrieNode* root, char* word)
 {
     if (search_word(root, word))
     //check if the word is found in the Trie
-        cout << word << " is present in the Trie\n";
+        cout << word << " is present in the Trie!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
 
+//function to delete a word in the trie
 bool delete_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -165,14 +185,18 @@ bool delete_word(TrieNode* root, char* word)
                 //between the deleted word and other words in the trie
             if (cnt > 1)
             {
-                lastBranchNode = current; //
+                //assigns the current node pointer is the most common prefix node
+                lastBranchNode = current;
+                //assigns the current character is the last common prefix
                 lastBranchChar = word[i];
             }
+            //move the next currentNode pointer
             current = current->children[idx];
         }
     }
     //now, the cnt is the count of characters in the last common prefix node
     int cnt = 0;
+    //iterate across the length of pointer array to count of character in the current node
     for (int i = 0; i < ALPHABET_SIZE; i++)
         if (current->children[i] != NULL)
             cnt++;
@@ -204,56 +228,73 @@ bool delete_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after deleting
 void print_delete(TrieNode* root, char* word)
 {
     if (delete_word(root, word))
     //if the word is deleted in Trie
-        cout << word << " is successfully deleted\n";
+        cout << word << " is successfully deleted!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
 
 int main()
 {
-    //make a root node for the trie
-    TrieNode* root = makeTrieNode('\0');
+        //open file to import and export data
+        freopen("input1.txt", "r", stdin);
+        freopen("output1.txt", "w", stdout);
 
-    //store the strings that we want to insert in the trie
-    vector<char*>input = {"angel", "and", "advice", "brake", "break",
-                          "breathe", "cat", "card", "cold", "gene",
-                          "generous", "geek", "sea", "see", "season"};
-    int len1 = input.size();    //number of insert operations in the trie
-    //inserting
-    for (int i = 0; i < len1; i++)
-        root = insert_word(root, input[i]);
-    //print the trie after insert
-    cout << "Trie after insert: ";
-    printTrie(root);
-    cout << "\n";
+        //len1 is a number of insert operations in the trie
+        //len2 is a number of search operations in the trie
+        //len3 is a number of delete operations in the trie
+        int len1 = 0, len2 = 0, len3 = 0;
+        cin >> len1 >> len2 >> len3;
+        cout << len1 << " " << len2 << " " << len3 << endl;
 
-    //store the strings that we want to search in the trie
-    vector<char*>searchQuery = {"ant", "hello", "bag", "cat",
-                                "dog", "sea", "hot"};
-    int len2 = searchQuery.size();  //number of search operations in the trie
-    //searching
-    cout << "Searching:\n";
-    for (int i = 0; i < len2; i++)
-        print_search(root, searchQuery[i]);
-    cout << "\n";
+        char str[1000];     //the character array for alternation
 
-    //store the strings that we want to delete in the trie
-    vector<char*>deleteQuery = {"sea", "and", "cat", "hi"};
-    int len3 = deleteQuery.size();  //number of delete operations in the trie
-    //deleting
-    cout << "Deleting:\n";
-    for (int i = 0; i < len3; i++)
-        print_delete(root, deleteQuery[i]);
-    //print the trie after delete
-    cout << "Trie after delete: ";
-    printTrie(root);
-    cout << "\n";
+        //make a root node for the trie
+        TrieNode* root = makeTrieNode('\0');
 
-    //free trie node
-    freeTrieNode(root);
-    return 0;
+        //import string and insert into the trie
+        for (int i = 0; i < len1; i++)
+        {
+            char *input;
+            input = str;
+            cin >> input;   //import string input from file
+            root = insert_word(root, input);
+        }
+        //print the trie after insert
+        cout << "Trie after insert: ";
+        printTrie(root);
+        cout << "\n\n";
+
+        //searching
+        cout << "Searching:\n";
+        for (int i = 0; i < len2; i++)
+        {
+            char *searchQuery;
+            searchQuery = str;
+            cin >> searchQuery;     //import search query string from file
+            print_search(root, searchQuery);
+        }
+        cout << "\n";
+
+        //deleting
+        cout << "Deleting:\n";
+        for (int i = 0; i < len3; i++)
+        {
+            char *deleteQuery;
+            deleteQuery = str;
+            cin >> deleteQuery;     //import delete query string from file
+            print_delete(root, deleteQuery);
+        }
+        //print the trie after delete
+        cout << "Trie after delete: ";
+        printTrie(root);
+        cout << "\n";
+
+        //free trie node
+        freeTrieNode(root);
+        return 0;
 }
