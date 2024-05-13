@@ -1,9 +1,10 @@
+//function to delete a word in the trie
 bool delete_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
     TrieNode* current = root;
     //initialize the lastBranchNode with the node contains the character that is the last common prefix
-    TrieNode* lastBranchNode = NULL; 
+    TrieNode* lastBranchNode = NULL;
     //initialize the lastBranchChar with the character is the last common prefix
     char lastBranchChar = 'a';
     //iterate across the length of the string
@@ -32,14 +33,18 @@ bool delete_word(TrieNode* root, char* word)
                 //between the deleted word and other words in the trie
             if (cnt > 1)
             {
-                lastBranchNode = current; //
+                //assigns the current node pointer is the most common prefix node
+                lastBranchNode = current;
+                //assigns the current character is the last common prefix
                 lastBranchChar = word[i];
             }
+            //move the next currentNode pointer
             current = current->children[idx];
         }
     }
     //now, the cnt is the count of characters in the last common prefix node
     int cnt = 0;
+    //iterate across the length of pointer array to count of character in the current node
     for (int i = 0; i < ALPHABET_SIZE; i++)
         if (current->children[i] != NULL)
             cnt++;
@@ -71,11 +76,12 @@ bool delete_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after deleting
 void print_delete(TrieNode* root, char* word)
 {
     if (delete_word(root, word))
     //if the word is deleted in Trie
-        cout << word << " is successfully deleted\n";
+        cout << word << " is successfully deleted!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
