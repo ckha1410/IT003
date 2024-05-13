@@ -1,3 +1,4 @@
+//function to insert a new word into the trie
 TrieNode* insert_word(TrieNode* root, char* word)
 {
     //initialize the currentNode pointer with the root node
