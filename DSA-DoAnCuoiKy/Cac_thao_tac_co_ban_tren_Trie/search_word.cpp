@@ -1,3 +1,4 @@
+//function to search a word in the trie
 bool search_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -22,11 +23,12 @@ bool search_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after searching
 void print_search(TrieNode* root, char* word)
 {
     if (search_word(root, word))
     //check if the word is found in the Trie
-        cout << word << " is present in the Trie\n";
+        cout << word << " is present in the Trie!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
