@@ -1,3 +1,4 @@
+//function to check if a prefix exists or not in trie
 bool isPrefixExist(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -18,4 +19,14 @@ bool isPrefixExist(TrieNode* root, char* word)
     }
     //prefix exist in trie
     return true;
+}
+
+//function to print the result after checking prefix existence in trie
+void print_prefix(TrieNode* root, char* prefix)
+{
+    if (isPrefixExist(root, prefix))
+    //check if the prefix is found in the Trie
+        cout << prefix << " is present in the Trie!\n";
+    else
+        cout << prefix << " is not present in the Trie!\n";
 }
