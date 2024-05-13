@@ -110,9 +110,9 @@ void print_prefix(TrieNode* root, char* prefix)
 {
     if (isPrefixExist(root, prefix))
     //check if the prefix is found in the Trie
-        cout << prefix << " is present in the Trie\n";
+        cout << prefix << " is present in the Trie!\n";
     else
-        cout << prefix << " is not present in the Trie\n";
+        cout << prefix << " is not present in the Trie!\n";
 }
 
 //function to search a word in the trie
@@ -145,9 +145,9 @@ void print_search(TrieNode* root, char* word)
 {
     if (search_word(root, word))
     //check if the word is found in the Trie
-        cout << word << " is present in the Trie\n";
+        cout << word << " is present in the Trie!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
 
 //function to delete a word in the trie
@@ -233,9 +233,9 @@ void print_delete(TrieNode* root, char* word)
 {
     if (delete_word(root, word))
     //if the word is deleted in Trie
-        cout << word << " is successfully deleted\n";
+        cout << word << " is successfully deleted!\n";
     else
-        cout << word << " is not present in the Trie\n";
+        cout << word << " is not present in the Trie!\n";
 }
 
 int main()
