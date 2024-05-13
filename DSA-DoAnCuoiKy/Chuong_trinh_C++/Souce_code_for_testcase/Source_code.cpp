@@ -244,13 +244,10 @@ int main()
         freopen("input1.txt", "r", stdin);
         freopen("output1.txt", "w", stdout);
 
+        cin >> len1 >> len2 >> len3;
         //len1 is a number of insert operations in the trie
         //len2 is a number of search operations in the trie
         //len3 is a number of delete operations in the trie
-        int len1 = 0, len2 = 0, len3 = 0;
-        cin >> len1 >> len2 >> len3;
-        cout << len1 << " " << len2 << " " << len3 << endl;
-
         char str[1000];     //the character array for alternation
 
         //make a root node for the trie
@@ -296,5 +293,6 @@ int main()
 
         //free trie node
         freeTrieNode(root);
+    
         return 0;
 }
