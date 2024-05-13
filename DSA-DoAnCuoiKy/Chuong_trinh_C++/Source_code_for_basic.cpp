@@ -10,8 +10,10 @@ struct TrieNode
     char data; //storing for printing purposes only
     TrieNode* children[ALPHABET_SIZE];  //pointer array for child nodes of each node
     bool is_leaf; //a flag to check if it's a leaf node
+                  //that means it is the last character of a word in trie
 };
 
+//function to make a new trie node
 TrieNode* makeTrieNode(char data)
 {
     //create a trie node
@@ -24,6 +26,7 @@ TrieNode* makeTrieNode(char data)
     return newNode;
 }
 
+//function to free trie node
 void freeTrieNode(TrieNode* root)
 {
     //free the trie node sequence
@@ -36,6 +39,7 @@ void freeTrieNode(TrieNode* root)
     free(root);
 }
 
+//function to insert a new word into the trie
 TrieNode* insert_word(TrieNode* root, char* word)
 {
     //initialize the currentNode pointer with the root node
@@ -64,6 +68,7 @@ TrieNode* insert_word(TrieNode* root, char* word)
     return root;
 }
 
+//function to print the trie
 void printTrie(TrieNode* root)
 {
     //print the nodes of the trie
@@ -77,6 +82,7 @@ void printTrie(TrieNode* root)
         printTrie(current->children[i]);
 }
 
+//function to check if a prefix exists or not in trie
 bool isPrefixExist(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -99,6 +105,7 @@ bool isPrefixExist(TrieNode* root, char* word)
     return true;
 }
 
+//function to print the result after checking prefix existence in trie
 void print_prefix(TrieNode* root, char* prefix)
 {
     if (isPrefixExist(root, prefix))
@@ -108,6 +115,7 @@ void print_prefix(TrieNode* root, char* prefix)
         cout << prefix << " is not present in the Trie\n";
 }
 
+//function to search a word in the trie
 bool search_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -132,6 +140,7 @@ bool search_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after searching
 void print_search(TrieNode* root, char* word)
 {
     if (search_word(root, word))
@@ -141,6 +150,7 @@ void print_search(TrieNode* root, char* word)
         cout << word << " is not present in the Trie\n";
 }
 
+//function to delete a word in the trie
 bool delete_word(TrieNode* root, char* word)
 {
     //initialize the current Node pointer with the root node
@@ -175,14 +185,18 @@ bool delete_word(TrieNode* root, char* word)
                 //between the deleted word and other words in the trie
             if (cnt > 1)
             {
-                lastBranchNode = current; //
+                //assigns the current node pointer is the most common prefix node
+                lastBranchNode = current;
+                //assigns the current character is the last common prefix
                 lastBranchChar = word[i];
             }
+            //move the next currentNode pointer
             current = current->children[idx];
         }
     }
     //now, the cnt is the count of characters in the last common prefix node
     int cnt = 0;
+    //iterate across the length of pointer array to count of character in the current node
     for (int i = 0; i < ALPHABET_SIZE; i++)
         if (current->children[i] != NULL)
             cnt++;
@@ -214,6 +228,7 @@ bool delete_word(TrieNode* root, char* word)
     return false;
 }
 
+//function to print the result after deleting
 void print_delete(TrieNode* root, char* word)
 {
     if (delete_word(root, word))
@@ -254,7 +269,7 @@ int main()
     //store the strings that we want to search prefix in the trie
     vector<char*>prefixQuery = {"an", "ba", "br", "ge",
                                 "go", "se"};
-    int len3 = prefixQuery.size();  //number of search operations in the trie
+    int len3 = prefixQuery.size();  //number of search prefix operations in the trie
     //searching prefix
     cout << "Searching prefix:\n";
     for (int i = 0; i < len3; i++)
@@ -275,5 +290,6 @@ int main()
 
     //free trie node
     freeTrieNode(root);
+
     return 0;
 }
