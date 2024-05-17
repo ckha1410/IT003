@@ -1,7 +1,12 @@
-//function to make a new trie node
+/// hàm tạo một nút trie
 TrieNode* makeTrieNode(char data)
 {
-    //create a trie node
+    /**
+     * khởi tạo mọi chỉ mục của mảng childNode bằng NULL
+     * khởi tạo cờ đánh dấu is_leaf = 0
+     * lưu trữ biến data chứa ký tự tương ứng của chuỗi
+    **/
+
     TrieNode* newNode = new TrieNode();
     //initialize every index of childNode array with NULL
     for (int i = 0; i < ALPHABET_SIZE; i++)
