@@ -3,7 +3,7 @@
     (chi tiết ở hàm main)
 
     Thực hiện gọi các hàm: chèn, tìm kiếm từ, tìm kiếm tiền tố, xóa, liệt kê đối với bộ dữ liệu cho sẵn
-    Thu được kết quả được in trên màn hình
+    Thu được kết quả in trên màn hình
 
 **/
 
