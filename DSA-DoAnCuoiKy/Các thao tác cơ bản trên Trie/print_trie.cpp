@@ -7,8 +7,7 @@ void print_trie(TrieNode* root)
      * nếu nút gốc là rỗng, kết thúc lần in
      * khởi tạo con trỏ current thay thế nút gốc
      * thực hiện in ký tự đã lưu trong nút
-     * chạy vòng lặp theo độ dài bảng chữ cái để gọi đệ quy
-       in toàn bộ ký tự có trong mảng con trỏ của nút tương ứng này
+     * chạy vòng lặp theo độ dài bảng chữ cái để gọi đệ quy in toàn bộ ký tự có trong mảng con trỏ của nút tương ứng này
 
     **/
 
