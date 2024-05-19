@@ -4,7 +4,7 @@ struct TrieNode
        XÁC ĐỊNH CẤU TRÚC CỦA MỘT NÚT:
 
      * một biến data dùng cho mục đích in cây trie
-     * mảng con trỏ cho các nút con của mỗi nút
+     * mảng con trỏ cho các nút con của mỗi nút, có kích thướng là độ dài bảng chữ cái ALPHABET_SIZE = 26
      * một cờ để đánh dấu là nút chứa ký tự kết thúc của từ
 
     **/
