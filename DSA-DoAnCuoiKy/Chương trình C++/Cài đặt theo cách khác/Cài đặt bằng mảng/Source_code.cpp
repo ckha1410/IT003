@@ -1,3 +1,11 @@
+/**
+    XÂY DỰNG CHƯƠNG TRÌNH ĐƯỢC CÀI ĐẶT BẰNG MẢNG VỚI BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE
+    (chi tiết ở hàm main)
+
+    Thực hiện gọi các hàm: chèn, tìm kiếm từ, xóa đối với bộ dữ liệu testcase từ file input
+    Thu được kết quả ghi ra file output
+
+**/
 
 #include <iostream>
 #include <string.h>
