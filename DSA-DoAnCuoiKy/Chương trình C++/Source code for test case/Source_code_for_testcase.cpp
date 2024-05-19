@@ -19,8 +19,7 @@ struct TrieNode
 
     char data; //storing for printing purposes only
     TrieNode* children[ALPHABET_SIZE];  //pointer array for child nodes of each node
-    bool is_leaf; //a flag to check if it's a leaf node
-                  //that means it is the last character of a word in trie
+    bool is_leaf; //a flag to check if it's a leaf node that means it is the last character of a word in trie
 };
 
 TrieNode* makeTrieNode(char data)
@@ -70,15 +69,11 @@ TrieNode* insert_word(TrieNode* root, char* word)
 
      * đầu vào của hàm gồm nút gốc trie và một từ cần chèn
      * khởi tạo con trỏ current thay thế nút gốc
-     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của từ cần chèn
-       với mỗi ký tự, kiểm tra xem trong mảng con trỏ của nút tương ứng
+     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của từ cần chèn; với mỗi ký tự, kiểm tra xem trong mảng con trỏ của nút tương ứng
        với ký tự đó có rỗng hay không bằng chỉ mục vị trí idx
-     * nếu là NULL thì thực hiện tạo một nút mới và trỏ ký tự hiện tại
-       vào nút mới được tạo này, sau đó di chuyển đến nút tiếp theo
-     * nếu không phải là NULL, ta sẽ không chèn, thay vào đó di chuyển
-       đến nút tiếp theo
-     * khi đến nút tương ứng với ký tự cuối cùng của từ cần chèn, đánh
-       dấu nút đó là nút kết thúc từ thông qua biến is_leaf
+     * nếu là NULL thì thực hiện tạo một nút mới và trỏ ký tự hiện tại vào nút mới được tạo này, sau đó di chuyển đến nút tiếp theo
+     * nếu không phải là NULL, ta sẽ không chèn, thay vào đó di chuyển đến nút tiếp theo
+     * khi đến nút tương ứng với ký tự cuối cùng của từ cần chèn, đánh dấu nút đó là nút kết thúc từ thông qua biến is_leaf
 
     **/
 
@@ -117,8 +112,7 @@ void print_trie(TrieNode* root)
      * nếu nút gốc là rỗng, kết thúc lần in
      * khởi tạo con trỏ current thay thế nút gốc
      * thực hiện in ký tự đã lưu trong nút
-     * chạy vòng lặp theo độ dài bảng chữ cái để gọi đệ quy
-       in toàn bộ ký tự có trong mảng con trỏ của nút tương ứng này
+     * chạy vòng lặp theo độ dài bảng chữ cái để gọi đệ quy in toàn bộ ký tự có trong mảng con trỏ của nút tương ứng này
 
     **/
 
@@ -140,13 +134,11 @@ bool search_word(TrieNode* root, char* word)
 
      * đầu vào của hàm gồm nút gốc trie và một từ cần tìm kiếm
      * khởi tạo con trỏ current thay thế nút gốc
-     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của từ cần tìm kiếm
-       và đi xuống cây theo các nút tương ứng với mỗi ký tự
+     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của từ cần tìm kiếm và đi xuống cây theo các nút tương ứng với mỗi ký tự
      * nếu ký tự hiện tại có trong nút, di chuyển tới nút con của nó
      * nếu ở bất kỳ bước nào ký tự hiện tại của từ không có trong nút thì trả về false
-     * nếu ký tự cuối cùng được tìm thấy, kiểm tra nút đó có biến is_leaf được đánh dấu
-       hay không để kiểm tra sự kết thúc của từ. Nếu có đánh dấu, hàm search trả về
-       true có nghĩa là tìm thấy từ, ngược lại trả về false
+     * nếu ký tự cuối cùng được tìm thấy, kiểm tra nút đó có biến is_leaf được đánh dấu hay không để kiểm tra sự kết thúc của từ. 
+       Nếu có đánh dấu, hàm search trả về true có nghĩa là tìm thấy từ, ngược lại hàm trả về false
 
     **/
 
@@ -172,7 +164,6 @@ bool search_word(TrieNode* root, char* word)
     return false;
 }
 
-
 void print_search(TrieNode* root, char* word)
 {
     /**
@@ -197,13 +188,10 @@ bool search_prefix(TrieNode* root, char* prefix)
 
      * đầu vào của hàm gồm nút gốc trie và một tiền tố cần tìm kiếm
      * khởi tạo con trỏ current thay thế nút gốc
-     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của tiền tố cần tìm kiếm
-       và đi xuống cây theo các nút tương ứng với mỗi ký tự
+     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của tiền tố cần tìm kiếm và đi xuống cây theo các nút tương ứng với mỗi ký tự
      * nếu ký tự hiện tại có trong nút, di chuyển tới nút con của nó
-     * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút
-       thì hàm trả về false
-     * nếu ký tự cuối cùng của tiền tố được tìm thấy, hàm trả về true
-       ngược lại, hàm trả về false
+     * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút thì hàm trả về false
+     * nếu ký tự cuối cùng của tiền tố được tìm thấy, hàm trả về true, ngược lại, hàm trả về false
 
     **/
 
@@ -379,11 +367,9 @@ void search_byPrefix(TrieNode* node, char* prefix, string s, vector<string>&ans)
       * kiểm tra nếu nút rỗng thì hàm kết thúc
       * khởi tạo con trỏ current thay thế nút chứa ký tự cuối của tiền tố
       * thực hiện lưu lần lượt ký tự trong trie vào xâu s
-      * kiểm tra nếu nút có đánh dấu là kết thúc của từ trong trie
-        thực hiện lưu xâu s vào vector kết quả và khởi tạo lại s
-        là tiền tố đã cho để tiếp tục in từ mới
-      * chạy vòng lặp theo độ dài mảng, gọi đệ quy để di chuyển xuống cây
-        để in tất cả ký tự của từ trong trie
+      * kiểm tra nếu nút có đánh dấu là kết thúc của từ trong trie, thực hiện lưu xâu s vào vector kết quả 
+        và khởi tạo lại s là tiền tố đã cho để tiếp tục in từ mới
+      * chạy vòng lặp theo độ dài mảng, gọi đệ quy để di chuyển xuống cây để in tất cả ký tự của từ trong trie
 
     **/
 
@@ -413,15 +399,12 @@ void list_word_byPrefix(TrieNode* root, char* prefix)
       * đầu vào của hàm gồm nút gốc trie và một tiền tố cho trước
       * khởi tạo một vector để lưu trữ các từ bắt đầu bằng tiền tố cho trước
       * khởi tạo con trỏ current thay thế nút gốc
-      * bắt đầu từ nút gốc, di chuyển đến nút chứa ký tự cuối cùng của tiền tố
-        cho trước
-      * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút
-        thì thông báo "Not have" và kết thúc hàm
+      * bắt đầu từ nút gốc, di chuyển đến nút chứa ký tự cuối cùng của tiền tố cho trước
+      * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút thì thông báo "Not have" và kết thúc hàm
       * ngược lại, tiếp tục di chuyển xuống cho đến ký tự cuối cùng của tiền tố
       * khởi tạo một biến xâu s là từ được liệt kê và lưu vào vector ans
       * thực hiện gọi hàm search_byPefix để tìm các từ bắt đầu bằng tiền tố
-      * sau khi thực hiện hàm search_byPrefix, thực hiện in các từ trong vector ans
-        thu được kết quả
+      * sau khi thực hiện hàm search_byPrefix, thực hiện in các từ trong vector ans thu được kết quả
 
     **/
 
@@ -471,6 +454,7 @@ int main()
       * thực hiện gọi các hàm tương ứng thu được kết quả
 
     **/
+        
         //open file to import and export data
         freopen("input1.txt", "r", stdin);
         freopen("output1.txt", "w", stdout);
