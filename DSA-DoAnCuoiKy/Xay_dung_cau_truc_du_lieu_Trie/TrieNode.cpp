@@ -1,10 +1,12 @@
-/// xác định cấu trúc của một nút
 struct TrieNode
 {
     /**
+       XÁC ĐỊNH CẤU TRÚC CỦA MỘT NÚT:
+
      * một biến data dùng cho mục đích in cây trie
      * mảng con trỏ cho các nút con của mỗi nút
      * một cờ để đánh dấu là nút chứa ký tự kết thúc của từ
+
     **/
 
     char data; //storing for printing purposes only
