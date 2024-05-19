@@ -1,10 +1,12 @@
-/// hàm tạo một nút trie
 TrieNode* makeTrieNode(char data)
 {
     /**
+       HÀM TẠO MỘT NÚT TRIE MỚI:
+
      * khởi tạo mọi chỉ mục của mảng childNode bằng NULL
      * khởi tạo cờ đánh dấu is_leaf = 0
      * lưu trữ biến data chứa ký tự tương ứng của chuỗi
+
     **/
 
     TrieNode* newNode = new TrieNode();
