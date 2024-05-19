@@ -5,13 +5,10 @@ bool search_prefix(TrieNode* root, char* prefix)
 
      * đầu vào của hàm gồm nút gốc trie và một tiền tố cần tìm kiếm
      * khởi tạo con trỏ current thay thế nút gốc
-     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của tiền tố cần tìm kiếm
-       và đi xuống cây theo các nút tương ứng với mỗi ký tự
+     * bắt đầu từ nút gốc, chạy vòng lặp theo độ dài của tiền tố cần tìm kiếm và đi xuống cây theo các nút tương ứng với mỗi ký tự
      * nếu ký tự hiện tại có trong nút, di chuyển tới nút con của nó
-     * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút
-       thì trả về false
-     * nếu ký tự cuối cùng của tiền tố được tìm thấy, hàm trả về true
-       ngược lại, hàm trả về false
+     * nếu ở bất kỳ bước nào ký tự hiện tại của tiền tố không có trong nút thì hàm trả về false
+     * nếu ký tự cuối cùng của tiền tố được tìm thấy, hàm trả về true, ngược lại, hàm trả về false
 
     **/
 
