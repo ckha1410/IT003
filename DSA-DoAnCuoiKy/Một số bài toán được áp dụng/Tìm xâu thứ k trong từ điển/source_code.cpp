@@ -1,3 +1,19 @@
+/**
+    BÀI TOÁN: Cho một danh sách từ điển gồm các xâu, thực hiện tìm kiếm xâu thứ k trong danh sách từ điển đó
+
+    PHƯƠNG PHÁP:
+        * Xây dựng cây trie từ danh sách xâu đầu vào
+        * Ở đỉnh hiện tại đang xét, ta sử dụng biến đếm cnt ở mỗi đỉnh con để xác định kí tự tiếp theo của xâu đáp án là gì. 
+          Sau đó di chuyển xuống đỉnh con đó để tiếp tục tìm kí tự tiếp theo.
+
+    XÂY DỰNG CHƯƠNG TRÌNH CÓ BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE:
+        * Dữ liệu vào: Đọc từ file "input.txt" có cấu trúc như sau:
+            - Dòng đầu tiên chứa 2 số nguyên gồm len là số lượng danh sách từ điển các xâu, k là số thứ tự của xâu cần tìm kiếm
+            - len dòng tiếp theo là các từ có trong danh sách
+        * Dữ liệu ra: Ghi vào file "output.txt" một dòng duy nhất là xâu thứ k trong danh sách từ điển
+
+**/
+
 #include <iostream>
 #include <string.h>
 #include <vector>
@@ -88,6 +104,10 @@ public:
 
     string find_k_string(int k)
     {
+        /**
+            HÀM THỰC HIỆN TÌM XÂU THỨ K CÓ TRONG TỪ ĐIỂN
+        **/
+        
         int pos = 0;
         string res = "";
 
@@ -109,7 +129,6 @@ public:
                     k -= nodes[nxt].cnt;
                 }
         }
-
         return res;
     }
 
@@ -121,15 +140,15 @@ int main()
 
      NHẬP XUẤT DỮ LIỆU BẰNG FILE:
 
-     * Nhập vào len là số lượng các từ và k là từ thứ k ở trong từ điển nhập vào
+     * Nhập vào len là số lượng các từ và k là số thứ tự của xâu cần tìm kiếm
      * Thực hiện tạo cây trie bằng cách chèn các từ vào trie
-     * Thực hiện gọi hàm tìm kiếm xâu thứ k trong danh sách từ điển đã tạo
+     * Thực hiện gọi hàm find_k_string() để tìm kiếm xâu thứ k trong danh sách từ điển đã tạo
      * Thực hiện in kết quả tìm kiếm
 
     **/
 
-    freopen("inputk1.txt", "r", stdin);
-    freopen("outputk1.txt", "w", stdout);
+    freopen("input1.txt", "r", stdin);
+    freopen("output1.txt", "w", stdout);
 
     int len, k;
     cin >> len >> k;
@@ -145,9 +164,11 @@ int main()
         myTree.add_word(input[i]);
     }
 
+    // khai báo một xâu ans nhận kết quả là xâu thứ k sau khi thực hiện hàm find_k_string()
     string ans;
     ans = myTree.find_k_string(k);
 
+    // thực hiện in kết quả
     cout << ans;
 
     return 0;
