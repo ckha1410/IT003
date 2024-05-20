@@ -1,3 +1,20 @@
+/**
+    BÀI TOÁN: Cho một danh sách xâu, thực hiện in các xâu theo thứ tự tăng dần
+
+    PHƯƠNG PHÁP:
+        * Xây dựng cây trie từ danh sách xâu đầu vào
+        * Duyệt dfs một lượt qua trie đó, đi lần lượt các cạnh theo thứ tự chữ cái tăng dần. 
+          Duyệt tới một đỉnh tới bất kì, ta sẽ in ra các xâu được thể hiện bởi đỉnh đó nếu có. 
+          Dễ thấy ta sẽ lần lượt thu được các xâu trong danh sách theo thứ tự từ điển tăng dần.
+
+    XÂY DỰNG CHƯƠNG TRÌNH CÓ BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE:
+        * Dữ liệu vào: Đọc từ file "input.txt" có cấu trúc như sau:
+            - Dòng đầu tiên chứa 1 số nguyên là số lượng danh sách xâu
+            - len dòng tiếp theo là các từ có trong danh sách
+        * Dữ liệu ra: Ghi vào file "output.txt" mỗi dòng là một xâu được sắp xếp theo thứ tự chữ cái tăng dần
+
+**/
+
 #include <iostream>
 #include <string.h>
 #include <vector>
@@ -88,14 +105,22 @@ public:
 
     void dfs(int pos, string& current_string, vector<string>& res)
     {
+        /**
+            HÀM dfs THỰC HIỆN DUYỆT CÂY TRIE LẦN LƯỢT QUA CÁC CẠNH THEO THỨ TỰ CHỮ CÁI TĂNG DẦN
+            * Đến một đỉnh pos bất kì, thực hiện cộng vào xâu res
+            * Tiếp tục di chuyển xuống các cạnh để in ký tự tiếp theo
+            
+        **/
+        
         for (int i = 1; i <= nodes[pos].exist; i++)
             res.push_back(current_string);
-        for (int i = 0; i < 26; i++) if (nodes[pos].child[i] != -1)
-        {
-            current_string += char(i + 'a');
-            dfs(nodes[pos].child[i], current_string, res);
-            current_string.pop_back();
-        }
+        for (int i = 0; i < 26; i++) 
+            if (nodes[pos].child[i] != -1)
+            {
+                current_string += char(i + 'a');
+                dfs(nodes[pos].child[i], current_string, res);
+                current_string.pop_back();
+            }
     }
 
     vector<string> sort_strings()
