@@ -1,10 +1,19 @@
 /**
     XÂY DỰNG CHƯƠNG TRÌNH ĐƯỢC CÀI ĐẶT BẰNG MẢNG VỚI BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE
-    (chi tiết ở hàm main)
 
     Thực hiện gọi các hàm: chèn, tìm kiếm từ, xóa đối với bộ dữ liệu testcase từ file input
     Thu được kết quả ghi ra file output
-
+    
+        * Dữ liệu vào: Đọc từ file "input.txt" có cấu trúc như sau:
+            - Dòng đầu tiên chứa 3 số nguyên cách nhau ít nhất 1 khoảng trắng:
+                + len1 là số lượng từ cần chèn vào trie
+                + len2 là số lượng từ cho truy vấn tìm kiếm
+                + len3 là số lượng từ cho truy vấn xóa
+            - len1 dòng tiếp theo chứa các từ cần chèn, len2 dòng tiếp theo là các từ cần tìm kiếm, len3 dòng tiếp theo là các từ cần xóa
+        * Dữ liệu ra: Ghi vào file "output.txt" có cấu trúc như sau:
+            - In ra kết quả tìm kiếm gồm len2 dòng thông báo từ tương ứng có xuất hiện trong trie hay không
+            - In ra kết quả xóa gồm len3 dòng thông báo từ tương ứng đã được xóa trong trie hay chưa
+            
 **/
 
 #include <iostream>
