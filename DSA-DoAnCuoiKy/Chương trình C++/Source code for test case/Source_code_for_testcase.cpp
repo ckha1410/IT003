@@ -1,6 +1,6 @@
 /**
     XÂY DỰNG CHƯƠNG TRÌNH CÓ BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE
-    (chi tiết ở hàm main)
+    (Dữ liệu vào/ra có chi tiết ở mục PHỤ LỤC - Báo cáo)
 
     Thực hiện gọi các hàm: chèn, tìm kiếm từ, xóa, liệt kê đối với bộ dữ liệu testcase từ file input
     Thu được kết quả ghi ra file output
