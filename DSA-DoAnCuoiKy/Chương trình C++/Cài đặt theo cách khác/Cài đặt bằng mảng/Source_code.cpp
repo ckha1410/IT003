@@ -199,7 +199,7 @@ int main()
 {
     /**
 
-     NHẬP/XUẤT DỮ LIỆU BẰNG FILE:
+     NHẬP XUẤT DỮ LIỆU BẰNG FILE:
 
      * Nhập vào độ dài 3 vector lưu trữ xâu
      * Vector input lưu trữ các xâu để chèn vào trie
@@ -208,6 +208,7 @@ int main()
      * Thực hiện gọi các hàm thu được kết quả
 
     **/
+
 
     freopen("input1.txt", "r", stdin);
     freopen("output1.txt", "w", stdout);
@@ -233,9 +234,9 @@ int main()
     {
         cin >> searchQuery[i];
         if (myTree.find_word(searchQuery[i]))
-            cout << searchQuery[i] << " is present in the Trie!\n";
+            cout << "\"" << searchQuery[i] << "\" is present in the Trie!\n";
         else
-            cout << searchQuery[i] << " is not present in the Trie!\n";
+            cout << "\"" << searchQuery[i] << "\" is not present in the Trie!\n";
     }
     cout << "\n";
 
@@ -247,9 +248,9 @@ int main()
     {
         cin >> deleteQuery[i];
         if (myTree.delete_word(deleteQuery[i]))
-            cout << deleteQuery[i] << " is successfully deleted!\n";
+            cout << "\"" << deleteQuery[i] << "\" is successfully deleted!\n";
         else
-            cout << deleteQuery[i] << " is not present in the Trie!\n";
+            cout << "\"" << deleteQuery[i] << "\" is not present in the Trie!\n";
     }
     cout << "\n";
 
