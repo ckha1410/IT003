@@ -1,0 +1,138 @@
+Trie after insert: ->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->1->1->1->1->0->0->1->1->0->0->0->1->1->1->1->0->0->1->1->0->1->1->0->0->0->0->1->1->1->0->1->1->0->0->0->1->1->1->0->1->1->0->1->0->0->0->0->1->1->0->1->1->0->1->1->1->1->0->0->1->1->1->1->0->1->1->0->1->1->0->0->0->0->1->1->0->1->1->0->0->1->0->0->0->1->1->0->1->1->0->0->1->1->0->1->0->0->0->0->0->0->1->0->0->1->0->1->0->0->0->1->0->1->0->0->1->1->0->1->1->0->0->1->0->1->1->0->0->1->0->1->0->1->1->0->0->1->1->0->1->1->0->0->0->0->0->1->0->1->1->0->0
+
+Searching:
+24 is present in the Trie!
+57 is present in the Trie!
+5 is present in the Trie!
+5 is present in the Trie!
+66 is not present in the Trie!
+72 is present in the Trie!
+81 is not present in the Trie!
+78 is present in the Trie!
+78 is present in the Trie!
+71 is not present in the Trie!
+53 is not present in the Trie!
+82 is present in the Trie!
+82 is present in the Trie!
+65 is not present in the Trie!
+84 is present in the Trie!
+63 is not present in the Trie!
+6 is not present in the Trie!
+29 is present in the Trie!
+79 is present in the Trie!
+38 is not present in the Trie!
+81 is not present in the Trie!
+33 is present in the Trie!
+48 is present in the Trie!
+57 is present in the Trie!
+91 is present in the Trie!
+44 is not present in the Trie!
+34 is present in the Trie!
+77 is present in the Trie!
+12 is present in the Trie!
+1 is present in the Trie!
+63 is not present in the Trie!
+99 is present in the Trie!
+1 is present in the Trie!
+17 is not present in the Trie!
+62 is present in the Trie!
+86 is not present in the Trie!
+64 is present in the Trie!
+95 is present in the Trie!
+54 is not present in the Trie!
+9 is present in the Trie!
+20 is not present in the Trie!
+82 is present in the Trie!
+66 is not present in the Trie!
+69 is not present in the Trie!
+53 is not present in the Trie!
+95 is present in the Trie!
+51 is present in the Trie!
+21 is present in the Trie!
+52 is present in the Trie!
+89 is not present in the Trie!
+71 is not present in the Trie!
+28 is not present in the Trie!
+3 is present in the Trie!
+13 is present in the Trie!
+15 is present in the Trie!
+50 is present in the Trie!
+48 is present in the Trie!
+73 is not present in the Trie!
+11 is present in the Trie!
+67 is not present in the Trie!
+56 is present in the Trie!
+40 is not present in the Trie!
+21 is present in the Trie!
+93 is present in the Trie!
+62 is present in the Trie!
+19 is present in the Trie!
+83 is present in the Trie!
+28 is not present in the Trie!
+12 is present in the Trie!
+95 is present in the Trie!
+9 is present in the Trie!
+38 is not present in the Trie!
+37 is present in the Trie!
+2 is not present in the Trie!
+62 is present in the Trie!
+19 is present in the Trie!
+91 is present in the Trie!
+50 is present in the Trie!
+34 is present in the Trie!
+3 is present in the Trie!
+27 is present in the Trie!
+8 is present in the Trie!
+12 is present in the Trie!
+43 is present in the Trie!
+7 is not present in the Trie!
+9 is present in the Trie!
+4 is present in the Trie!
+66 is not present in the Trie!
+35 is present in the Trie!
+91 is present in the Trie!
+24 is present in the Trie!
+11 is present in the Trie!
+19 is present in the Trie!
+93 is present in the Trie!
+
+Deleting:
+59 is successfully deleted!
+25 is not present in the Trie!
+28 is not present in the Trie!
+88 is not present in the Trie!
+86 is not present in the Trie!
+42 is not present in the Trie!
+57 is successfully deleted!
+41 is successfully deleted!
+22 is not present in the Trie!
+93 is successfully deleted!
+64 is successfully deleted!
+79 is successfully deleted!
+53 is not present in the Trie!
+60 is successfully deleted!
+41 is not present in the Trie!
+55 is not present in the Trie!
+81 is not present in the Trie!
+13 is successfully deleted!
+2 is not present in the Trie!
+48 is successfully deleted!
+66 is not present in the Trie!
+47 is successfully deleted!
+92 is successfully deleted!
+56 is successfully deleted!
+67 is not present in the Trie!
+11 is successfully deleted!
+25 is not present in the Trie!
+68 is successfully deleted!
+80 is not present in the Trie!
+75 is not present in the Trie!
+42 is not present in the Trie!
+63 is not present in the Trie!
+85 is not present in the Trie!
+30 is successfully deleted!
+94 is successfully deleted!
+63 is not present in the Trie!
+18 is not present in the Trie!
+13 is not present in the Trie!
+Trie after delete: ->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->0->1->1->1->1->0->0->1->1->0->0->0->1->1->0->0->1->0->1->1->0->0->0->0->1->1->1->0->1->1->0->0->0->1->1->1->0->1->1->0->0->0->0->1->1->0->1->1->0->1->1->1->1->0->1->1->1->0->1->1->0->1->0->0->0->1->1->0->1->1->0->0->1->0->1->0->1->0->1->1->0->1->0->0->0->1->1->0->1->0->0->0->1->0->1->0->0->1->1->0->1->0->0->1->0->1->1->0->0->1->0->1->0->1->1->1->1->1->0->0->0->0->0->1->0->1->1->0->0
