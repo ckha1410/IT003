@@ -7,7 +7,13 @@
 
     * Thực hiện xây dựng cấu trúc trie nhị phân, các thao tác cơ bản trên nó
     * Chương trình có bộ dữ liệu nhập/xuất từ file
-      (chi tiết ở hàm main)
+      - Dữ liệu vào: Đọc từ file "input.txt" có cấu trúc như sau:
+            + Dòng đầu tiên chứa 3 số nguyên cách nhau ít nhất 1 khoảng trắng:
+              len1 là số lượng số cần chèn vào trie, len2 là số lượng số cho truy vấn tìm kiếm, len3 là số lượng số cho truy vấn xóa
+            + len1 dòng tiếp theo là các số cần chèn, len2 dòng tiếp theo là các số cần tìm kiếm, len3 dòng tiếp theo là các số cần xóa
+        - Dữ liệu ra: Ghi vào file "output.txt" có cấu trúc như sau:
+            + In ra kết quả tìm kiếm gồm len2 dòng thông báo số tương ứng có xuất hiện trong trie hay không
+            + In ra kết quả xóa gồm len3 dòng thông báo số tương ứng đã được xóa trong trie hay chưa
 
     * Thực hiện gọi các hàm: chèn, tìm kiếm số, xóa với bộ dữ liệu testcase từ file input
       Thu được kết quả ghi ra file output
