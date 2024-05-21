@@ -356,8 +356,8 @@ int main()
     **/
 
         //open file to import and export data
-        freopen("inputB1.txt", "r", stdin);
-        freopen("outputB1.txt", "w", stdout);
+        freopen("input1.txt", "r", stdin);
+        freopen("output1.txt", "w", stdout);
 
         int len1, len2, len3;
         cin >> len1 >> len2 >> len3;
