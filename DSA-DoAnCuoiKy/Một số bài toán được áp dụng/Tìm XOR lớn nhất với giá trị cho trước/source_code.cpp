@@ -1,3 +1,14 @@
+/**
+    BÀI TOÁN: Cho một danh sách các số, tìm XOR lớn nhất giữa các số trong danh sách và một giá trị x cho trước 
+
+    XÂY DỰNG CHƯƠNG TRÌNH CÓ BỘ DỮ LIỆU NHẬP/XUẤT TỪ FILE:
+        * Dữ liệu vào: Đọc từ file "input.txt" có cấu trúc như sau:
+            - Dòng đầu tiên chứa 2 số nguyên gồm len là số lượng danh sách các số, x là số nguyên cho trước cần tìm XOR lớn nhất
+            - Dòng tiếp theo gồm len số có trong danh sách, mỗi số cách nhau ít nhất 1 dấu cách
+        * Dữ liệu ra: Ghi vào file "output.txt" một dòng duy nhất là kết quả XOR lớn nhất tìm được
+
+**/
+
 #include <iostream>
 #include <string.h>
 #include <vector>
@@ -7,6 +18,16 @@ const int NUMBEROFNODES = 1e4;
 const int LG = 31;
 class Trie
 {
+    /**
+        THỰC HIỆN XÂY DỰNG LỚP TRIE BAO GỒM CÁC HÀM LIÊN QUAN:
+
+        * Xác định cấu trúc của một nút
+        * Hàm tạo một nút mới
+        * Hàm thêm một số vào trie
+        * Hàm tìm kết quả XOR lớn nhất
+        
+    **/
+
     public:
     struct Node
     {
@@ -36,7 +57,6 @@ class Trie
     {
         /**
             TẠO VÀ TRẢ VỀ GIÁ TRỊ CỦA ĐỈNH MỚI ĐƯỢC TẠO RA
-
         **/
         cur++;
         memset(nodes[cur].child, -1, sizeof(nodes[cur].child));
@@ -69,7 +89,7 @@ class Trie
         nodes[pos].exist++;
     }
 
-    int query(int x)
+    int XOR(int x)
     {
 
         /**
@@ -108,12 +128,12 @@ int main()
       * mở file input, output để nhập, xuất dữ liệu
       * đọc dữ liệu vào từ file input
       * thực hiện khởi tạo cây trie chứa các số từ dữ liệu vào input
-      * thực hiện gọi hàm tương ứng thu được kết quả
+      * thực hiện gọi hàm XOR thu được kết quả
 
     **/
 
-    freopen("input10.txt", "r", stdin);
-    freopen("output10.txt", "w", stdout);
+    freopen("input1.txt", "r", stdin);
+    freopen("output1.txt", "w", stdout);
 
     int len, x;
     cin >> len >> x;
@@ -129,7 +149,7 @@ int main()
     }
 
     // gọi hàm tìm XOR lớn nhất với giá trị được cho
-    cout << myTree.query(x);
+    cout << myTree.XOR(x);
 
     return 0;
 }
